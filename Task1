@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+
+  public static List<Object> list = Arrays.asList(1, 2, "a", "b", 0, 15);
+
+    public static List<Object> getIntegersFromList(List<Object> list) {
+        List<Object> Integer = new ArrayList<>();
+
+        list.forEach(element -> {
+            if (element.getClass() == Integer.class) {
+                Integer.add(element);
+            }
+        });
+        return Integer;  
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getIntegersFromList(list));
+    }
+}
