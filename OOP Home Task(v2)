@@ -1,0 +1,71 @@
+public abstract class Transport {
+    protected int velocity;
+    protected int wheels;
+
+    public Transport(int velocity)
+    {
+        this.velocity = velocity;
+    }
+
+    public void setVelocity(int velocity)
+    {
+        this.velocity = velocity;
+    }
+
+    public int getVelocity()
+    {
+        return this.velocity;
+    }
+
+    public abstract String toString();
+}
+
+
+public class Car extends Transport {
+
+    public Car(int velocity)
+    {
+        super(velocity);
+        this.wheels = 4;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Car with "
+               + velocity
+               + " velocity and have "
+               + this.wheels
+               + " wheels";
+    }
+}
+
+
+public class Bicycle extends Transport {
+
+    public Bicycle(int velocity)
+    {
+        super(velocity);
+        this.wheels = 2;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Bicycle with "
+               + velocity
+               + " velocity and have "
+               + this.wheels
+               + " wheels";
+    }
+}
+
+
+class Main {
+    public static void main(String args[]) {
+        Bicycle bicycle = new Bicycle(10);
+        Car car = new Car(10);
+        System.out.println(bicycle.toString());
+        System.out.println(car.toString());
+    }
+}
