@@ -1,21 +1,22 @@
 class Main
 {
-    public static void main(String args[])
-    {
-        String inputStr ="srtteerress";
-        boolean letter = true;
-        System.out.println("Typed word: "+ inputStr);
-        for(char i :inputStr.toCharArray())
-        {
-            if (inputStr.indexOf(i) == inputStr.lastIndexOf(i))
-            {
-                System.out.println("First non repeating letter is: "+ i);
-                letter = false;
-                break;
+    public String first_non_repeating_letter(String word) {
+        int repeats;
+        for (int i = 0, n = word.length(); i < n; i++) {
+            repeats = 0;
+            char first = word.charAt(i);
+            for (int j=0; j<n; j++) {
+                if (first == word.charAt(j)) {
+                    repeats++;
+                }
+                if (repeats > 1) {
+                    break;
+                }
+            }
+            if (repeats < 2) {
+                return Character.toString(first);
             }
         }
-
-        if(letter)
-            System.out.println("NONE");
+        return "None";
     }
 }
