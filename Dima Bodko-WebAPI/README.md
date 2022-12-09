@@ -1,4 +1,4 @@
-# Dmytro_Kriuchkov
+# Dmytro_Bodko
 ## WebAPI Homework
 1. Download project (by .zip or using "git clone")
 2. If necessary change token value in RestWrapper class.
